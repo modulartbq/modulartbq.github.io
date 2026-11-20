@@ -1,6 +1,6 @@
 /* ===== CONFIGURACIÓN MODULART ===== */
 /* 1) Cambia este correo por el de tu usuario administrador (el mismo de Firebase) */
-const ADMIN_EMAIL='TU_CORREO@gmail.com';
+const ADMIN_EMAIL='modulart.bq@gmail.com';
 const firebaseConfig = {
   apiKey: "AIzaSyDcgQh6MCFubkF1xaLj-UFTZ5vl-zk0UEM",
   authDomain: "modulart-c8fa4.firebaseapp.com",

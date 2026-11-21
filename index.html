@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MODULART | Design &amp; Furniture</title>
+<meta name="description" content="Muebles y diseño de interiores a medida. MODULART Design & Furniture.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --linen:#EFE9E5; --beige:#D8CDBE; --taupe-claro:#BFA88A; --taupe:#A88E6E;
+  --taupe-medio:#8C7359; --marron:#6F5B48; --oscuro:#55453A;
+  --serif:'Bodoni Moda','Didot',Georgia,serif;
+  --sans:'Montserrat',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--linen);color:var(--oscuro);line-height:1.7;font-size:16px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--marron);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;color:var(--oscuro)}
+h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:20px}
+p{max-width:60ch}
+
+header{position:sticky;top:0;z-index:10;background:rgba(239,233,229,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--beige)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav img{height:44px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.85rem;letter-spacing:.08em}
+.nav a:hover{color:var(--taupe)}
+
+.hero{position:relative;overflow:hidden;padding:72px 0 96px;text-align:center}
+.hero img{width:min(420px,78vw);height:auto;margin:0 auto;display:block}
+.hero p{margin:12px auto 32px;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem);color:var(--marron)}
+.btn{display:inline-block;padding:14px 34px;background:var(--oscuro);color:var(--linen);font-size:.85rem;letter-spacing:.12em;transition:background .25s}
+.btn:hover{background:var(--marron)}
+.facet{position:absolute;opacity:.55;z-index:-1}
+.f1{left:-80px;top:40px;width:300px;height:380px;background:linear-gradient(135deg,var(--beige),var(--taupe-claro));clip-path:polygon(0 0,100% 30%,60% 100%)}
+.f2{right:-90px;bottom:-40px;width:340px;height:360px;background:linear-gradient(135deg,var(--taupe-claro),var(--taupe));clip-path:polygon(40% 0,100% 100%,0 70%)}
+
+section{padding:88px 0}
+.alt{background:var(--beige)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:40px}
+.item{border-top:3px solid var(--taupe);padding-top:18px}
+.item h3{font-size:1.5rem;margin-bottom:8px}
+.item p{font-size:.95rem}
+
+.steps{list-style:none;margin-top:36px;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--taupe-claro)}
+.steps b{font-family:var(--serif);font-weight:400;font-size:1.8rem;color:var(--taupe)}
+.steps h3{font-size:1.3rem}
+
+.contact{background:var(--oscuro);color:var(--linen);text-align:center}
+.contact h2{color:var(--linen)}
+.contact p{margin:0 auto 28px}
+.contact .btn{background:var(--taupe-claro);color:var(--oscuro)}
+.contact .btn:hover{background:var(--beige)}
+.contact address{margin-top:28px;font-style:normal;font-size:.9rem;color:var(--beige)}
+
+footer{background:var(--oscuro);color:var(--taupe-claro);text-align:center;padding:24px;font-size:.78rem;letter-spacing:.06em;border-top:1px solid var(--marron)}
+
+@media(max-width:640px){.nav ul{gap:14px;font-size:.75rem}.nav img{height:36px}section{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.pc{background:var(--linen);border:1px solid var(--beige);border-top:3px solid var(--taupe);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.pc img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.pc .b{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}.pc h3{font-size:1.4rem}.pc p{font-size:.95rem}
+.pc .tag{position:absolute;top:12px;left:12px;background:var(--oscuro);color:var(--linen);padding:4px 12px;font-size:.8rem;letter-spacing:.08em}
+.pc .btn{margin-top:auto;text-align:center;padding:11px 20px;font-size:.8rem}
+#promos{background:var(--beige)}
+.pc.fl img{aspect-ratio:auto;height:auto}.pc .btn.alt{background:var(--beige);color:var(--oscuro);margin-top:0}.pc.fl .b{gap:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" aria-label="MODULART inicio"><img src="logo.png" alt="MODULART Design &amp; Furniture"></a>
+    <nav><ul>
+      <li id="navp" hidden><a href="#promos">Promociones</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="inicio">
+  <span class="facet f1" aria-hidden="true"></span>
+  <span class="facet f2" aria-hidden="true"></span>
+  <div class="wrap">
+    <img src="logo.png" alt="Logo MODULART Design &amp; Furniture">
+    <p>Muebles a medida que dan forma a tu espacio.</p>
+    <a class="btn" href="#contacto">Solicitar cotización</a>
+  </div>
+</div>
+
+<section id="promos" hidden>
+  <div class="wrap">
+    <h2>Promociones</h2>
+    <div class="grid" id="pg"></div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap">
+    <h2>Diseño que se adapta a tu espacio</h2>
+    <p>En MODULART diseñamos y fabricamos muebles modulares con líneas limpias y materiales cálidos. Cada pieza se piensa para el espacio, el uso y el estilo de quien la habita.</p>
+  </div>
+</section>
+
+<section class="alt" id="servicios">
+  <div class="wrap">
+    <h2>Lo que hacemos</h2>
+    <div class="grid">
+      <div class="item"><h3>Cocinas</h3><p>Diseño modular a medida, con herrajes de calidad y acabados duraderos.</p></div>
+      <div class="item"><h3>Closets y vestidores</h3><p>Aprovechamos cada centímetro con distribuciones pensadas para tu rutina.</p></div>
+      <div class="item"><h3>Salas y comedores</h3><p>Mesas, centros de entretenimiento y muebles de sala con carácter propio.</p></div>
+      <div class="item"><h3>Oficinas y comercios</h3><p>Mobiliario y señalética para espacios de trabajo y puntos de venta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <h2>Cómo trabajamos</h2>
+    <ol class="steps">
+      <li><b>1</b><div><h3>Visita y medidas</h3><p>Conocemos tu espacio y lo que necesitas.</p></div></li>
+      <li><b>2</b><div><h3>Diseño y cotización</h3><p>Te presentamos la propuesta con materiales y valores claros.</p></div></li>
+      <li><b>3</b><div><h3>Fabricación</h3><p>Producimos cada módulo con control de calidad.</p></div></li>
+      <li><b>4</b><div><h3>Instalación</h3><p>Entregamos el mueble instalado y listo para usar.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2>Hablemos de tu proyecto</h2>
+    <p>Cuéntanos qué espacio quieres transformar y te respondemos con una propuesta.</p>
+    <a class="btn" href="https://wa.me/573244435985" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <address>Barranquilla, Atlántico · modulart.bq@gmail.com</address>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 MODULART Design &amp; Furniture. Todos los derechos reservados.</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+(async()=>{
+  try{
+    firebase.initializeApp({apiKey:"AIzaSyDcgQh6MCFubkF1xaLj-UFTZ5vl-zk0UEM",authDomain:"modulart-c8fa4.firebaseapp.com",projectId:"modulart-c8fa4",appId:"1:1019813085275:web:5963ea3c0450a08e6eff7e"});
+    const snap=await firebase.firestore().collection('promos').where('activo','==',true).get();
+    const hoy=new Date().toISOString().slice(0,10);
+    const L=snap.docs.map(d=>d.data()).filter(p=>!p.v||p.v>=hoy).sort((a,b)=>(b.upd||0)-(a.upd||0));
+    if(!L.length)return;
+    const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+    const wa=(document.querySelector('a[href^="https://wa.me/"]')||{}).href||'https://wa.me/';
+    document.getElementById('pg').innerHTML=L.map(p=>{const w=`${wa.split('?')[0]}?text=${encodeURIComponent('Hola MODULART, me interesa la promoción: '+p.t)}`;
+      if(p.flyer)return`<article class="pc fl"><img src="${p.img}" alt="${esc(p.t)}" loading="lazy"><div class="b"><a class="btn" target="_blank" rel="noopener" href="${w}">Quiero esta promoción</a><a class="btn alt" download="modulart-promocion.jpg" href="${p.img}">Descargar imagen</a></div></article>`;
+      return`<article class="pc">${p.e?`<span class="tag">${esc(p.e)}</span>`:''}${p.img?`<img src="${p.img}" alt="${esc(p.t)}" loading="lazy">`:''}<div class="b"><h3>${esc(p.t)}</h3><p>${esc(p.x)}</p><a class="btn" target="_blank" rel="noopener" href="${w}">Quiero esta promoción</a></div></article>`}).join('');
+    document.getElementById('promos').hidden=false;document.getElementById('navp').hidden=false;
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -52,6 +52,7 @@ h2{font:500 1.4rem var(--serif);margin:0 0 12px}
   <main>
     <div class="menu">
       <a href="despiece.html"><b>Despiece</b><small>Piezas, láminas, canto y herrajes</small></a>
+      <a href="promos.html" id="mp" hidden><b>Promociones</b><small>Publicidad de la página de clientes</small></a>
       <a href="cotizador.html" id="mc" hidden><b>Cotizador</b><small>Cotizaciones en PDF para clientes</small></a>
     </div>
     <div class="card" id="adm" hidden>
@@ -82,7 +83,7 @@ MOD.auth.onAuthStateChanged(async u=>{
   const p=await MOD.perfil(u);
   if(!p.ok){await MOD.auth.signOut();$('lm').textContent='Tu usuario no está activo. Habla con el administrador.';return}
   $('login').hidden=true;$('home').hidden=false;$('who').textContent=p.name+(p.admin?' · Administrador':'');
-  $('mc').hidden=!p.admin;$('adm').hidden=!p.admin;
+  $('mc').hidden=!p.admin;$('mp').hidden=!p.admin;$('adm').hidden=!p.admin;
   if(p.admin){try{await MOD.db.collection('users').doc(u.uid).set({name:'Administrador',email:u.email,role:'admin',active:true})}catch(e){}usuarios()}
 });
 $('go').onclick=async()=>{$('lm').className='msg';$('lm').textContent='';

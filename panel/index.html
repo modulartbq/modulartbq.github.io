@@ -82,7 +82,7 @@ MOD.auth.onAuthStateChanged(async u=>{
   if(!u){$('home').hidden=true;$('login').hidden=false;return}
   const p=await MOD.perfil(u);
   if(!p.ok){await MOD.auth.signOut();$('lm').textContent='Tu usuario no está activo. Habla con el administrador.';return}
-  $('login').hidden=true;$('home').hidden=false;$('who').textContent=p.name+(p.admin?' · Administrador':'');
+  $('login').hidden=true;$('home').hidden=false;$('who').textContent=p.admin?'Administrador':p.name;
   $('mc').hidden=!p.admin;$('mp').hidden=!p.admin;$('adm').hidden=!p.admin;
   if(p.admin){try{await MOD.db.collection('users').doc(u.uid).set({name:'Administrador',email:u.email,role:'admin',active:true})}catch(e){}usuarios()}
 });
